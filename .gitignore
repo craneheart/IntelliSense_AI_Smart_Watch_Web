@@ -185,4 +185,4 @@ settings/
 .idea
 
 **/audio_files
- /backend/assets
+/backend/assets
