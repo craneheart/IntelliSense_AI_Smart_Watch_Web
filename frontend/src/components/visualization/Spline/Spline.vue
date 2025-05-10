@@ -17,7 +17,7 @@
 <script lang="ts" setup>
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-console */
-import {ref, onMounted, onUnmounted, computed, watch, nextTick} from "vue";
+import {computed, nextTick, onMounted, onUnmounted, ref, watch} from "vue";
 import {Application, type SplineEventName} from "@splinetool/runtime";
 import {useDebounceFn, useIntersectionObserver} from "@vueuse/core";
 import ParentSize from "./ParentSize.vue";

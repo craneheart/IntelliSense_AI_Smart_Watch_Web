@@ -1,5 +1,5 @@
-from django.urls import path
 from channels.routing import URLRouter
+from django.urls import path
 
 from ComputingUnit import routing as computing_unit
 from Voice import routing as voice

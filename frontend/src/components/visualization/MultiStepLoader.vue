@@ -142,7 +142,7 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, watch, onUnmounted} from "vue";
+import {onUnmounted, ref, watch} from "vue";
 
 interface Step {
   text: string; // Display text for the step

@@ -1,6 +1,8 @@
-from channels.generic.websocket import AsyncWebsocketConsumer
-from CraneUtils.websockets import receive_handler, create_pipe_application, transmit
 import json
+
+from channels.generic.websocket import AsyncWebsocketConsumer
+
+from CraneUtils.websockets import receive_handler, create_pipe_application, transmit
 
 
 class RealTimeRecognitionConsumer(AsyncWebsocketConsumer):

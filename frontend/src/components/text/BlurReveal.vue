@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 import {Motion} from "motion-v";
-import {ref, onMounted, watchEffect, useSlots} from "vue";
+import {onMounted, ref, useSlots, watchEffect} from "vue";
 
 interface Props {
   duration?: number;

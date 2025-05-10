@@ -86,7 +86,7 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, onMounted, watch, onBeforeUnmount} from "vue";
+import {onBeforeUnmount, onMounted, ref, watch} from "vue";
 import {templateRef} from "@vueuse/core";
 
 // Define interfaces for props and data structures

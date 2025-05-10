@@ -1,10 +1,10 @@
 <script setup>
-import {ref} from 'vue';
+import {computed, ref} from 'vue';
 import VoiceButton from '@/components/button/VoiceBotton.vue';
 import LineShadowText from "@/components/text/LineShadowText.vue";
-import {computed} from "vue";
 import {useTheme} from "@/ulits/useTheme.js"
 import TextGenerateEffect from "@/components/text/TextGenerateEffect.vue";
+import router from '../router/index.js'
 
 const isDark = computed(() => useTheme().isDark);
 const shadowColor = computed(() => (isDark.value ? "black" : "white"));
@@ -16,6 +16,28 @@ const isRecording = ref(false);
 const currentTextIndex = ref(0);
 // 是否正在展示文本
 const isShowingText = ref(false);
+const textDisplay = [
+  {text: "智", time: "150"},
+  {text: "音", time: "400"},
+  {text: "助手", time: "50"},
+  {text: "，", time: "300"},
+  {text: "请你", time: "600"},
+  {text: "分析一下", time: "500"},
+  {text: "我当前", time: "150"},
+  {text: "的", time: "200"},
+  {text: "身体", time: "300"},
+  {text: "状况", time: "350"},
+]
+
+function textGenerate(index) {
+  if (index >= textDisplay.length) {
+  } else {
+    recognitionResults.value.push(textDisplay[index].text);
+    setTimeout(() => {
+      textGenerate(index + 1);
+    }, textDisplay[index].time);
+  }
+}
 
 // 处理录音状态更新
 const handleRecordingStatus = (status) => {
@@ -26,8 +48,19 @@ const handleRecordingStatus = (status) => {
     isRecording.value = true;
     // 清空之前的识别结果，只在开始录音时清空
     recognitionResults.value = [];
+    setTimeout(() => {
+      textGenerate(0)
+
+    }, 1000)
   } else if (status === '已停止') {
     isRecording.value = false;
+    setTimeout(() => {
+      router.push({
+        name: 'chat',
+        query: {message: "智音助手,请你分析一下我当前的身体状况"}
+      })
+
+    }, 2000)
   }
 };
 
@@ -77,14 +110,14 @@ const handleRecognitionResult = (result) => {
       </div>
     </div>
     <div id="generateText"
-         class="w-3/4 flex flex-col items-start mt-8 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg min-h-32">
+         class="w-3/4 flex flex-row items-start mt-8 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg min-h-32">
       <div v-if="recognitionResults.length === 0" class="text-gray-500 dark:text-gray-400 text-center w-full">
         请点击上方按钮
       </div>
-      <div v-for="(text, index) in recognitionResults" v-else :key="index">
+      <div v-for="(text, index) in recognitionResults" v-else :key="index" class="flex items-center mb-2">
         <TextGenerateEffect
             :words="text"
-            class="text-lg font-medium text-gray-800 dark:text-gray-200"
+            class="text-lg font-medium text-gray-800 dark:text-gray-200 inline-block"
         />
       </div>
     </div>

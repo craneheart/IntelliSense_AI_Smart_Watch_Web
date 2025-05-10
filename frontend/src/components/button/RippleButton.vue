@@ -35,7 +35,7 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, watchEffect, type HTMLAttributes} from "vue";
+import {type HTMLAttributes, ref, watchEffect} from "vue";
 import {cn} from "@/lib/utils";
 
 interface RippleButtonProps {

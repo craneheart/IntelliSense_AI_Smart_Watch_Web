@@ -1,5 +1,5 @@
 <script setup>
-import {ref, onMounted, onUnmounted, nextTick, defineEmits} from 'vue';
+import {defineEmits, nextTick, onMounted, onUnmounted, ref} from 'vue';
 import {realTimeRecognition} from '@/api/websockets/RealTimeRecognition';
 
 // 定义事件

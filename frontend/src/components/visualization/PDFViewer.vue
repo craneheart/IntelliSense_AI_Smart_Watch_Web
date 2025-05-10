@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, watch } from 'vue'
+import {onMounted, ref, watch} from 'vue'
 import * as pdfjsLib from 'pdfjs-dist'
 
 // 定义组件的 props
@@ -11,8 +11,8 @@ const props = defineProps({
 })
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.mjs',
-  import.meta.url
+    'pdfjs-dist/build/pdf.worker.mjs',
+    import.meta.url
 ).toString()
 
 const pdfDoc = ref(null)
@@ -41,12 +41,12 @@ async function loadPdf(url) {
 async function renderPage(num) {
   if (!pdfDoc.value) return
   const page = await pdfDoc.value.getPage(num)
-  const viewport = page.getViewport({ scale: 1.5 })
+  const viewport = page.getViewport({scale: 1.5})
   const canvas = canvasRef.value
   const context = canvas.getContext('2d')
   canvas.height = viewport.height
   canvas.width = viewport.width
-  await page.render({ canvasContext: context, viewport }).promise
+  await page.render({canvasContext: context, viewport}).promise
 }
 
 function prevPage() {
@@ -70,7 +70,7 @@ watch(() => props.url, (newUrl) => {
     pdfDoc.value = null
     pageCount.value = 0
   }
-}, { immediate: true })
+}, {immediate: true})
 
 onMounted(() => {
   // 如果初始有 URL，则加载 PDF
@@ -88,20 +88,20 @@ onMounted(() => {
     <div v-if="!props.url || loading" class="text-gray-500">加载中...</div>
 
     <div v-else-if="pdfDoc">
-      <canvas ref="canvasRef" class="border border-gray-300 max-w-full mb-2 rounded shadow" />
+      <canvas ref="canvasRef" class="border border-gray-300 max-w-full mb-2 rounded shadow"/>
       <div v-if="pageCount > 0" class="flex items-center justify-center space-x-4 mt-2">
         <button
-          @click="prevPage"
-          :disabled="pageNum<=1"
-          class="px-4 py-1 rounded bg-blue-500 text-white disabled:bg-gray-300 transition"
+            :disabled="pageNum<=1"
+            class="px-4 py-1 rounded bg-blue-500 text-white disabled:bg-gray-300 transition"
+            @click="prevPage"
         >
           上一页
         </button>
         <span class="text-gray-700">第 {{ pageNum }} / {{ pageCount }} 页</span>
         <button
-          @click="nextPage"
-          :disabled="pageNum>=pageCount"
-          class="px-4 py-1 rounded bg-blue-500 text-white disabled:bg-gray-300 transition"
+            :disabled="pageNum>=pageCount"
+            class="px-4 py-1 rounded bg-blue-500 text-white disabled:bg-gray-300 transition"
+            @click="nextPage"
         >
           下一页
         </button>

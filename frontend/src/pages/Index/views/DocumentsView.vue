@@ -1,7 +1,7 @@
 <script setup>
 import SideBar from "@/components/Sider/SideBar.vue";
 import request from "@/api/request.js";
-import {ref, reactive, computed, onMounted} from "vue";
+import {onMounted, reactive, ref} from "vue";
 import {base64} from "@/ulits/File.js";
 
 const DocNames = ref([]);

@@ -7,7 +7,7 @@ import deepseek from "@/api/websockets/DeepSeek.js";
 
 
 import {useRoute} from "vue-router";
-import {onMounted, ref, reactive, computed} from "vue";
+import {computed, onMounted, reactive, ref} from "vue";
 
 const placeholders = [
   "我现在的心率是多少?",

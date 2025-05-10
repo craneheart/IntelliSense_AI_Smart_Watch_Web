@@ -1,9 +1,10 @@
-from django.views import View
-from django.http import JsonResponse, HttpResponse
-from django.views.decorators.csrf import ensure_csrf_cookie
-from django.utils.decorators import method_decorator
-import json
 import base64
+import json
+
+from django.http import JsonResponse, HttpResponse
+from django.utils.decorators import method_decorator
+from django.views import View
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 
 def docs(name):

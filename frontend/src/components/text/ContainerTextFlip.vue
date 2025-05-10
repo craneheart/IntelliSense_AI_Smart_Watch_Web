@@ -57,7 +57,7 @@
 import {cn} from "@/lib/utils";
 import {Motion} from "motion-v";
 import {templateRef, useIntervalFn} from "@vueuse/core";
-import {ref, computed, useId} from "vue";
+import {computed, ref, useId} from "vue";
 
 const props = withDefaults(
     defineProps<{

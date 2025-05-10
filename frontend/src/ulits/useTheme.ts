@@ -1,4 +1,4 @@
-import {ref, onMounted} from 'vue'
+import {onMounted, ref} from 'vue'
 
 // 定义主题色配置
 const themeColors = {

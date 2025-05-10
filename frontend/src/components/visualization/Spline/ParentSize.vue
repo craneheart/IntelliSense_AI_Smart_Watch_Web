@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, reactive, computed, useAttrs} from "vue";
+import {computed, reactive, ref, useAttrs} from "vue";
 import {useDebounceFn, useResizeObserver} from "@vueuse/core";
 import {cn} from "@/lib/utils";
 

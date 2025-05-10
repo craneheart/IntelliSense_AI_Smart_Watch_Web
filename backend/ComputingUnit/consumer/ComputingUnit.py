@@ -1,11 +1,14 @@
 import asyncio
+import json
+import os
 import random
 
 from channels.generic.websocket import AsyncWebsocketConsumer
-from CraneUtils.websockets import receive_handler, transmit
-import json
 from django.core.cache import cache
+from dotenv import load_dotenv
 from openai import OpenAI
+
+from CraneUtils.websockets import receive_handler, transmit
 
 
 class ConnectConsumer(AsyncWebsocketConsumer):
@@ -94,22 +97,22 @@ class DeepSeekConsumer(AsyncWebsocketConsumer):
         print(data)
 
     async def handle_message(self, data):
-        # await self.deepseek.websocket_chat(data, self.send)
-        await self.deepseek.chat_test(self.send)
+        await self.deepseek.websocket_chat(data, self.send)
 
 
 class DeepSeek:
     def __init__(self):
-        with open('../settings/API', 'r') as f:
-            api_key = f.read().strip()
+        load_dotenv()
+        api_key = os.getenv("api_key")
         self.client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
         self.history = [
             {"role": "system",
-             "content": "你是一个智音手环的智能助手，为用户提供健康上的帮助,请不要用表情。user当前心跳103,血氧98,当前状态,站立，不要使用markdown，模仿实际对话的方式回答问题。"},
+             "content": "你是一个智音手环的智能助手，为用户提供健康上的帮助,请不要用表情。user当前心跳83,血氧98,当前状态:静坐，不要使用markdown，模仿实际对话的方式回答问题。"},
         ]
         self.stream = True
         self.model = "deepseek-chat"
 
+    # noinspection PyTypeChecker
     async def websocket_chat(self, message, send_func):
         self.history.append({"role": "user", "content": message})
         content = ''

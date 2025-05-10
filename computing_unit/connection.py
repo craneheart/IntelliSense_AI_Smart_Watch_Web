@@ -1,6 +1,4 @@
-import websockets
 import asyncio
-import json
 
 from ws_class import UnitAdmin
 

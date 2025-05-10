@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-import {type TreeContextProps, TREE_CONTEXT_SYMBOL} from "./index";
+import {TREE_CONTEXT_SYMBOL, type TreeContextProps} from "./index";
 import {inject} from "vue";
 
 const treeContext = inject<TreeContextProps>(TREE_CONTEXT_SYMBOL);

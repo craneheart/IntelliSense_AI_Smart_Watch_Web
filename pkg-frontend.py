@@ -1,12 +1,14 @@
 import asyncio
-import os
 import json
+import os
 from platform import system
+
+from dotenv import load_dotenv
 
 
 def get_node_path():
-    with open("settings/nodepath", "r") as file:
-        node_path = file.read().strip()
+    load_dotenv()
+    node_path = os.getenv("NODE_PATH")
     return node_path
 
 

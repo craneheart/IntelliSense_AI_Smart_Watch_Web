@@ -1,9 +1,9 @@
+import asyncio
 import json
 
 import websockets
-import asyncio
 
-WS_URI = 'ws://localhost:8000/computingUnit/'
+WS_URI = 'ws://localhost:8000/ws/computingUnit/'
 
 
 class UnitAdmin:
@@ -84,7 +84,7 @@ class Pipe:
         try:
             while True:
                 response = await self.websocket.recv()
-                print(response)
+                # print(response)
 
         except websockets.ConnectionClosed as e:
             print(f'连接关闭: {e.code} - {e.reason}')

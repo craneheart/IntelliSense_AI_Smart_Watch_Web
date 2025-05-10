@@ -42,7 +42,7 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, computed, onMounted, onBeforeUnmount, watch} from "vue";
+import {computed, onBeforeUnmount, onMounted, ref, watch} from "vue";
 
 interface Props {
   words: string[];

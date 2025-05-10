@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
 from Documents import urls as documents
-from Voice import urls as voice
 from Index import urls as index
+from Voice import urls as voice
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -1,4 +1,4 @@
 export default function connection(url) {
-    const baseUrl = "wss://crane.xyhrc.com/ws";
+    const baseUrl = "ws://localhost:8000/ws";
     return new WebSocket(`${baseUrl}${url}`);
 }

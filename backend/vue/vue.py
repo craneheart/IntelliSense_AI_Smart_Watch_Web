@@ -1,6 +1,7 @@
-from django.views.generic import TemplateView
 import json
 from os.path import join
+
+from django.views.generic import TemplateView
 
 with open(join("vue", "application.json"), "r", encoding="utf-8") as json_file:
     data = json.load(json_file)

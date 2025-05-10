@@ -14,13 +14,8 @@
 
 <script lang="ts" setup>
 import {cn} from "@/lib/utils";
-import {
-  type TreeContextProps,
-  type TreeViewElement,
-  type TreeProps,
-  TREE_CONTEXT_SYMBOL,
-} from "./index";
-import {inject, computed, toRefs, ref, onMounted, provide} from "vue";
+import {TREE_CONTEXT_SYMBOL, type TreeContextProps, type TreeProps, type TreeViewElement,} from "./index";
+import {onMounted, provide, ref, toRefs} from "vue";
 
 const props = withDefaults(defineProps<TreeProps>(), {
   indicator: true,

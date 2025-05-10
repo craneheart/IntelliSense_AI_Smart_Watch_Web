@@ -176,8 +176,6 @@ frontend/dist/
 frontend/node_modules/
 
 backend/db.sqlite3
-test/
-settings/
 
 
 */migrations/*

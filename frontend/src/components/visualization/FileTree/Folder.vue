@@ -47,8 +47,8 @@
 
 <script lang="ts" setup>
 import {cn} from "@/lib/utils";
-import {type TreeContextProps, type FolderProps, TREE_CONTEXT_SYMBOL} from "./index";
-import {inject, computed, toRefs} from "vue";
+import {type FolderProps, TREE_CONTEXT_SYMBOL, type TreeContextProps} from "./index";
+import {computed, inject, toRefs} from "vue";
 
 const props = withDefaults(defineProps<FolderProps>(), {
   isSelectable: true,

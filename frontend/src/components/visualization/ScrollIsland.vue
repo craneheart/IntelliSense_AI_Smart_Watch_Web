@@ -62,7 +62,7 @@
 import {cn} from "@/lib/utils";
 import NumberFlow from "@number-flow/vue";
 import {useColorMode} from "@vueuse/core";
-import {motion, MotionConfig} from "motion-v";
+import {MotionConfig} from "motion-v";
 import {computed, onMounted, onUnmounted, ref, useSlots} from "vue";
 
 interface Props {
