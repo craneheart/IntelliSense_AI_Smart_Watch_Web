@@ -1,5 +1,4 @@
 <script setup>
-import MorphingText from "@/components/text/MorphingText.vue";
 import TextGenerateEffect from "@/components/text/TextGenerateEffect.vue";
 import ExpandableGallery from "@/components/container/ExpandableGallery.vue";
 import CardContainer from "@/components/cards/3DCardEffect/CardContainer.vue";
@@ -10,10 +9,6 @@ import VanishingInput from "@/components/input/VanishingInput.vue";
 import FlipCard from "@/components/cards/FlipCard.vue";
 import router from '../router/index.js'
 
-const texts = [
-  "智音",
-  "知音"
-];
 const images = [
   "/static/images/realWatch/1.jpg",
   "/static/images/realWatch/2.jpg",
@@ -40,9 +35,9 @@ function switchToChat(e) {
 <template>
   <div>
     <div class="mt-20 flex flex-col items-center justify-center">
-      <MorphingText :texts="texts" cool-down-time="2"/>
       <div class="flex flex-col items-center justify-center mt-10">
-        <TextGenerateEffect class="text-3xl mb-10" duration="0.7" words="—— 多模态AI 运动手环"/>
+        <TextGenerateEffect class="text-8xl mb-10" duration="0.7" words="康聆脉动"/>
+        <TextGenerateEffect class="text-3xl mb-10" duration="0.7" words="——AI驱动多模态健康监测手环"/>
         <div class="flex flex-col sm:flex-col md:flex-row items-center justify-around w-fit md:w-3/4">
           <FlipCard>
             <template #default>
@@ -217,7 +212,7 @@ function switchToChat(e) {
         </CardContainer>
       </div>
       <div class="flex flex-col items-center justify-center mt-40">
-        <SparklesText class="text-xl sm:text-2xl md:text-4xl lg:text-5xl mb-10" text="智音助手, 随时找我!"/>
+        <SparklesText class="text-xl sm:text-2xl md:text-4xl lg:text-5xl mb-10" text="康聆助手, 随时找我!"/>
         <VanishingInput :autofocus="false"
                         :placeholders="placeholders"
                         class="mt-10"

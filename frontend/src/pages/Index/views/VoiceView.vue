@@ -57,7 +57,7 @@ const handleRecordingStatus = (status) => {
     setTimeout(() => {
       router.push({
         name: 'chat',
-        query: {message: "智音助手,请你分析一下我当前的身体状况"}
+        query: {message: "康聆助手,请你分析一下我当前的身体状况"}
       })
 
     }, 2000)

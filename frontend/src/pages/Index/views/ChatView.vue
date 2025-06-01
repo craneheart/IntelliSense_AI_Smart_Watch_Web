@@ -156,7 +156,7 @@ function handleStateChange(state) {
   />
   <div class="flex flex-col items-center justify-center mt-40">
     <SparklesText class="text-xl sm:text-2xl md:text-4xl lg:text-5xl mb-10"
-                  text="智音助手, 随时找我!"/>
+                  text="康聆助手, 随时找我!"/>
     <div id="messageBox"
          class="w-4/5 sm:w-3/4 md:w-2/3 lg:w-1/2 max-h-[60vh] overflow-y-auto flex flex-col gap-4 scroll-smooth  rounded-lg p-4 bg-white/80 shadow-lg">
       <template v-for="(message, index) in messages" :key="message.id">

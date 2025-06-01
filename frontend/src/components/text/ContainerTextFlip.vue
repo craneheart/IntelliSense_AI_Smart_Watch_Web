@@ -92,7 +92,3 @@ useIntervalFn(() => {
 </script>
 
 <style scoped></style>
-
-<!--  <div class="flex w-full items-center justify-center">-->
-<!--    <ContainerTextFlip :words="['智音', '知音']" />-->
-<!--  </div>-->

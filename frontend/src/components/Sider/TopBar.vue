@@ -12,7 +12,7 @@ const isMobileMenuOpen = ref(false);
 // 导航菜单项
 const navItems = [
   {name: '首页', path: '/'},
-  {name: '智音助手', path: '/chat'},
+  {name: '康聆助手', path: '/chat'},
   {name: '语音对话', path: '/voice'},
   {name: '文档展示', path: '/docs'},
 ];
@@ -32,7 +32,7 @@ const toggleMobileMenu = () => {
             :duration="5"
             class="font-bold text-xl tracking-tight select-none cursor-pointer"
             @click="$router.replace('/')"
-        >智音多模态AI手环
+        >康聆脉动——AI驱动多模态健康监测手环
         </RadianText>
       </div>
 

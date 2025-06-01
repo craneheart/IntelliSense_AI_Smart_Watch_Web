@@ -9,6 +9,8 @@ from dotenv import load_dotenv
 def get_node_path():
     load_dotenv()
     node_path = os.getenv("NODE_PATH")
+    if not node_path:
+        raise Exception("NODE_PATH environment variable is not set")
     return node_path
 
 

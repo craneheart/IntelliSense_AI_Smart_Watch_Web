@@ -107,7 +107,7 @@ class DeepSeek:
         self.client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
         self.history = [
             {"role": "system",
-             "content": "你是一个智音手环的智能助手，为用户提供健康上的帮助,请不要用表情。user当前心跳83,血氧98,当前状态:静坐，不要使用markdown，模仿实际对话的方式回答问题。"},
+             "content": "你是一个康聆手环的智能助手，为用户提供健康上的帮助,请不要用表情。user当前心跳83,血氧98,当前状态:静坐，不要使用markdown，模仿实际对话的方式回答问题。"},
         ]
         self.stream = True
         self.model = "deepseek-chat"
